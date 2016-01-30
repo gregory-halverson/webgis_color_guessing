@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WebGIS 690E Spring 2016 Assignment 2</title>
+    <script>
+        color_list = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'violet'];
+
+        function random_between(lower, upper)
+        {
+            return Math.floor(Math.random() * (upper - lower + 1) + lower)
+        }
+
+        function do_game()
+        {
+            var finished = false;
+            var random_number = random_between(0, color_list.length - 1);
+            var random_color = color_list[random_number];
+
+            // debug output
+            alert(String(random_number) + ': ' + random_color);
+
+            while (!finished)
+            {
+                var guess = prompt('Guess a color in the list:\n\n' + color_list.join(', '));
+
+                finished = (guess == random_color);
+            }
+
+            alert('congratulations!')
+        }
+    </script>
+</head>
+<body>
+    <h1>Assignment 2: Coursera Color Guessing Game</h1>
+    <h3>WebGIS 690E Spring 2016</h3>
+    <h3>Gregory Halverson</h3>
+    <h3>California State University, Northridge</h3>
+    <br>
+
+    <script>
+        do_game()
+    </script>
+</body>
+</html>
